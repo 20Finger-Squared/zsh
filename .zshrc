@@ -25,15 +25,11 @@ alias fzf=__fzfextra
 
 # actual alias'
 alias cdr='cd $(git rev-parse --show-toplevel 2>/dev/null)'
-alias fvim='~/.config/myScripts/fvim.sh'
-alias fman="~/.config/myScripts/fman.sh"
-alias repos="~/.config/myScripts/repos.sh"
 alias cd="z"
 
 # pacman alias'
 alias pacstall="sudo pacman -Syu"
 alias pacrem="sudo pacman -Rns"
-alias pacfind='~/.config/myScripts/pacfind.sh'
 
 autoload -Uz compinit
 eval "$(starship init zsh)"
