@@ -2,6 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+EDITOR=nvim
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 source /usr/share/zsh-antidote/antidote.zsh
