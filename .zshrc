@@ -10,9 +10,18 @@ antidote load
 bindkey -v
 zstyle :compinstall filename '/home/rhylie/.zshrc'
 
+__fzfextra() {
+    local fzf_opts=(--height=$(($LINES-1)) --smart-case --style=full)
+    if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ (screen|tmux) ]] && [ -z "$TMUX" ]; then
+        fzf "${fzf_opts[@]}"
+    else
+        fzf "${fzf_opts[@]}" --tmux
+    fi
+}
+
 # alias' for config
 alias ls="exa -G --icons -F --group-directories-first"
-alias fzf='fzf --height=$(($LINES-1)) --smart-case --style=full'
+alias fzf=__fzfextra
 
 # actual alias'
 alias cdr='cd $(git rev-parse --show-toplevel 2>/dev/null)'
